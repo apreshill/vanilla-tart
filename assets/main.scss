@@ -1,3 +1,5 @@
+// Your variable overrides
 $font-family-sans-serif: "Rosario";
 
-@import "/scss/bootstrap.scss";
+// Bootstrap and its default variables
+@import "bootstrap/scss/bootstrap";

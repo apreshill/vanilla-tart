@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> About Hugo Prose | Hugo Prose</title>
+    
+    
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="About Hugo Prose"/>
+<meta name="twitter:description" content="Hugo Prose is a minimalist theme derived from the XMin theme, and inspired by Wowchemy (previously known as the Academic theme), Distill, and tufte.css. This theme itself is completely plain-text and lightweight, and does not use any icons, images, or emojis.1 By default, the theme only uses two JavaScript libraries, MathJax and highlight.js, and they are loaded only when necessary. The rest of JavaScript is written from scratch and also relatively short."/>
+
+
+
+ 
+<link rel="stylesheet" href="/main.min.ca292f1e088032eecc5a6b2f318a78967e3a9bd30baf0c2c58a58f02efa24a70.css">
+
+  </head>
+
+  <body>
+
+    <nav class="menu">
+    <ul>
+      <li class="left">
+        <a href="/"><span>Hugo Prose</span></a>
+      </li>
+      
+      <li>
+        <a href="/">Home</a>
+      </li>
+      
+      <li>
+        <a href="/about/" class="active">About</a>
+      </li>
+      
+      <li>
+        <a href="/sitemap/">Sitemap</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/#">Search</a>
+      </li>
+      
+      <li>
+        <a href="/index.xml">Subscribe</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">About Hugo Prose</span></h1>
+
+<h3 class="author">
+Yihui Xie
+</h3>
+
+
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/hugo">Hugo</a> <a href="/categories/theme">Theme</a> 
+  
+  
+  
+  Tags: <a href="/tags/menu">menu</a> <a href="/tags/toc">TOC</a> <a href="/tags/sidenote">sidenote</a> <a href="/tags/appendix">appendix</a> <a href="/tags/citation">citation</a> <a href="/tags/numbered-section">numbered section</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p><strong>Hugo Prose</strong> is a minimalist theme derived from the <a href="https://github.com/yihui/hugo-xmin"><strong>XMin</strong>
+theme</a>, and inspired by
+<a href="https://wowchemy.com">Wowchemy</a> (previously known as the Academic theme),
+<a href="https://distill.pub">Distill</a>, and
+<a href="https://github.com/edwardtufte/tufte.css">tufte.css</a>. This theme itself is
+completely plain-text and lightweight, and does not use any icons, images, or
+emojis.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> By default, the theme only uses two JavaScript libraries, MathJax
+and highlight.js, and they are loaded only when necessary. The rest of
+JavaScript is written from scratch and also relatively short. This theme does
+not use any CSS frameworks, and the full CSS code is also written from scratch
+(about 300 lines).</p>
+<div class="quote-right">
+<blockquote>
+<p>It is not the man who has too little that is poor, but the one who hankers after more.</p>
+<p>&mdash; <em>Letters from a Stoic</em></p>
+</blockquote>
+</div>
+<p>This page introduces the features of this Hugo theme that you can fiddle with.</p>
+<h2 id="site-configurations">Site configurations</h2>
+<p>Below are the possible options that you may configure for a site based on this
+theme.</p>
+<h3 id="menus">Menus</h3>
+<p>Each page has a menu in the header and a menu in the footer. The header menu is
+defined in the <code>header</code> option in <code>menu</code> in <code>config.yaml</code>, and similarly, the
+footer menu is defined in the <code>footer</code> option, e.g.,</p>
+<pre><code class="language-yaml">menu:
+  header:
+    - name: Home
+      url: &quot;/&quot;
+      weight: 1
+    - name: About
+      url: &quot;/about/&quot;
+      weight: 2
+  footer:
+    - name: Contact
+      url: &quot;/404.html&quot;
+      weight: 1
+    - name: Categories
+      url: &quot;/categories/&quot;
+      weight: 2
+      pre: &quot;optional&quot;
+</code></pre>
+<p>The <code>url</code> of a menu item can be either a relative URL pointing to a page on this
+website, or an external link (e.g., <code>url: &quot;https://github.com/yihui&quot;</code>). The
+order of the menu items is determined by the <code>weight</code> values. If a menu item has
+a <code>pre</code> value, it will be used as the class of the menu item. The special value
+<code>optional</code> indicates that this menu item will be hidden on small screens.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>The header menu can be made sticky via the parameter <code>pageFeatures</code> in
+<code>config.yaml</code>:</p>
+<pre><code class="language-yaml">params:
+  pageFeatuers: [+sticky_menu]
+</code></pre>
+<p>This feature can be disabled per-page if enabled globally in
+<code>config.yaml</code>&mdash;-add <code>-sticky_menu</code> to the <code>features</code> YAML field in the single
+page, e.g.,</p>
+<pre><code class="language-yaml">features: [-sticky_menu]
+</code></pre>
+<h3 id="home-page">Home page</h3>
+<p>The body of the home page consists of an introduction, followed by a series of
+info cards, and then a number of the latest posts and pages.</p>
+<ul>
+<li>
+<p>The introduction comes from <code>content/_index.md</code>. The Markdown content can
+contain arbitrary elements.</p>
+</li>
+<li>
+<p>The info cards come from the <code>content/card/</code> directory. Each (Markdown) file
+is displayed on the home page as a separate card. The title is displayed
+vertically on the left or right side.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> If you want to customize the style
+of a certain card, you may use the YAML option <code>style</code> in the file, e.g.,</p>
+<pre><code class="language-yaml">---
+title: &quot;Courses&quot;
+style: &quot;background: darkorange; color: white;&quot;
+---
+</code></pre>
+<p>This will add a dark orange background to the card, and change the color of
+text to white. You can use any CSS styles here (e.g., <code>font-size</code>,
+<code>background-image</code>, and <code>padding</code>).</p>
+</li>
+<li>
+<p>The number of latest posts and pages can be defined via the <code>homePosts</code>
+option in <code>params</code> in <code>config.yaml</code>, e.g.,</p>
+<pre><code class="language-yaml">params:
+  homePosts: 10
+</code></pre>
+<p>The default is 6.</p>
+</li>
+<li>
+<p>The <code>mainSections</code> parameter can be used to select the sections of pages to
+be included on the home page, e.g.,</p>
+<pre><code class="language-yaml">params:
+  mainSections: [&quot;post&quot;, &quot;news&quot;]
+</code></pre>
+</li>
+</ul>
+<h3 id="footer">Footer</h3>
+<p>Besides the menu in the footer, you can specify a copyright statement in the
+<code>footer</code> parameter in <code>config.yaml</code>, e.g.,</p>
+<pre><code class="language-yaml">params:
+  footer: &quot;&amp;copy; Frida Gomam 2015 -- 2020&quot;
+</code></pre>
+<h3 id="comments">Comments</h3>
+<p>Disqus, Utterances</p>
+<h3 id="searching">Searching</h3>
+<p>This theme supports searching out of the box based on
+<a href="https://fusejs.io">Fuse.js</a>. A few critical configurations:</p>
+<ul>
+<li>
+<p>The site needs to generate a JSON index. This is done via a layout file
+<code>index.json.json</code> in <code>layouts/_default/</code>, and the config in <code>config.yaml</code>:</p>
+<pre><code class="language-yaml">outputs:
+  home: [html, rss, json]
+</code></pre>
+</li>
+<li>
+<p>A menu item with the ID <code>menu-search</code> configured in <code>config.yaml</code>, e.g.,</p>
+<pre><code class="language-yaml">menu:
+  header:
+    - name: Search
+      url: &quot;#&quot;
+      identifier: menu-search
+</code></pre>
+</li>
+<li>
+<p>The version of Fuse can be configured via the parameter <code>fuseVersion</code> in
+<code>config.yaml</code>, e.g.,</p>
+<pre><code class="language-yaml">params:
+  fuseVersion: 6.4.3
+</code></pre>
+<p>If no <code>fuseVersion</code> is specified, the latest version of Fuse.js will be
+used. You may also download a copy of Fuse.js to the <code>static/</code> folder of
+your site and use this copy instead of loading it from CDN. To do that, you
+may download Fuse.js to, say, <code>static/js/fuse.js</code> and modify the partial
+template <code>layouts/partials/foot_custom.html</code>. Replace</p>
+<pre><code class="language-html">{{ with .Site.Params.fuseVersion }}
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/fuse.js@{{ . }}&quot;&gt;&lt;/script&gt;
+{{ end }}
+</code></pre>
+<p>with</p>
+<pre><code class="language-html">&lt;script src=&quot;{{ relURL &quot;/js/fuse.js&quot; }}&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>That way, you can also use search when viewing the site offline, because
+Fuse.js is no longer loaded from CDN.</p>
+</li>
+</ul>
+<h2 id="articles">Articles</h2>
+<blockquote>
+<p>At the moment, I&rsquo;m too tired to complete the documentation. If you want to be
+an early adopter of this theme, you might have to read the source.</p>
+</blockquote>
+<h3 id="multiple-authors">Multiple authors</h3>
+<p>If an article has multiple authors, specify their names in an array in the
+<code>author</code> field.</p>
+<p>Author&rsquo;s bio is loaded from the database <code>data/authors.yaml</code>.</p>
+<h3 id="table-of-contents">Table of contents</h3>
+<p>TOC can be automatically generated, no matter if you use Hugo/goldmark or
+Pandoc/R Markdown.</p>
+<h3 id="number-sections">Number sections</h3>
+<p>Section headers can be automatically numbered, no matter if you use
+Hugo/goldmark or Pandoc/R Markdown.</p>
+<h3 id="footnotes-citations-and-sidenotes">Footnotes, citations, and sidenotes</h3>
+<p>Footnotes and citation entries<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> are moved to the right margin by default. If
+you want to write arbitrary sidenotes, use the classes <code>side</code> and
+<code>side-left</code>/<code>side-right</code>.</p>
+<div class="side side-left">
+<p>This is a sidenote on the left side. You can include anything in the note. For example, here is a bullet list:</p>
+<ul>
+<li>Get up</li>
+<li>Do the work</li>
+<li>Go to bed</li>
+</ul>
+</div>
+<pre><code class="language-html">&lt;div class=&quot;side side-left&quot;&gt;
+
+Content to be displayed as a sidenote.
+
+&lt;/div&gt;
+</code></pre>
+<h3 id="appendix">Appendix</h3>
+<ul>
+<li>
+<p>Author&rsquo;s bio</p>
+</li>
+<li>
+<p>Custom fields</p>
+</li>
+<li>
+<p>License</p>
+</li>
+<li>
+<p>Suggest changes</p>
+</li>
+</ul>
+<h3 id="drafts">Drafts</h3>
+<p>Mark an article as draft by adding <code>draft: true</code> to the YAML metadata. Draft
+articles are styled with a background of diagonal lines and a watermark &ldquo;Draft.&rdquo;
+For listing pages, draft articles are also indicated by the background.</p>
+<h2 id="floats">Floats</h2>
+<h3 id="full-width-elements">Full-width elements</h3>
+<p>Apply the class <code>fullwidth</code>, e.g.,</p>
+<pre><code class="language-html">&lt;div class=&quot;fullwidth&quot;&gt;
+
+Content to be displayed with its maximum width.
+
+&lt;/div&gt;
+</code></pre>
+<div class="fullwidth">
+<figure>
+    <img src="https://upload.wikimedia.org/wikipedia/en/timeline/c8fff6bec6e98dfe6399084a540293e3.png"
+         alt="History of stoics"/> <figcaption>
+            <p>Figure 3.1: Beginning around 301 BC, Zeno taught philosophy at the Stoa Poikile (&ldquo;Painted Porch&rdquo;), from which his philosophy got its name. Unlike the other schools of philosophy, such as the Epicureans, Zeno chose to teach his philosophy in a public space, which was a colonnade overlooking the central gathering place of Athens, the Agora.</p>
+        </figcaption>
+</figure>
+
+</div>
+<p>If you want the full-width element to be scrollable, you can apply an additional
+class <code>fullscroll</code>, e.g.,</p>
+<pre><code class="language-html">&lt;div class=&quot;fullwidth fullscroll&quot;&gt;
+
+Super wide content to be scrolled horizontally.
+
+&lt;/div&gt;
+</code></pre>
+<div class="fullwidth fullscroll">
+<figure>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Along_the_River_During_the_Qingming_Festival_%28Qing_Court_Version%29.jpg/10000px-Along_the_River_During_the_Qingming_Festival_%28Qing_Court_Version%29.jpg"
+         alt="Along the River During the Qingming Festival"/> <figcaption>
+            <p>Figure 3.2: This painting is known as the &ldquo;Qing Court Version&rdquo; of <em>Along the River During the Qingming Festival</em>. Here, the figural scenes are numerous and detailed, happening around noteworthy landmarks and places such as the serene rustic countryside, the Rainbow Bridge (虹橋) and its crowded markets, the lively surroundings and throughways at the city walls and gates, the busy streets and various packed shops, the secluded literati gardens, the Songzhu Hall (松竹軒) as well as the beautiful site of the Jinming Lake (金明池).</p>
+        </figcaption>
+</figure>
+
+</div>
+<h3 id="embedded-elements">Embedded elements</h3>
+<p>Use the <code>embed-left</code> or <code>embed-right</code> class to embed a content block to be
+floated to the left or right, and the block will exceed the article margin by
+200px, e.g.,</p>
+<pre><code class="language-html">&lt;div class=&quot;embed-right&quot;&gt;
+
+Content to be embedded onto the margin.
+
+&lt;/div&gt;
+</code></pre>
+<div class="embed-right">
+<iframe src="https://player.vimeo.com/video/469252441" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<p>One application is to embed videos in an article, when the video needs a
+narrative. For example, you can embed a video on the right side, and provide a
+narrative in the body of the article, which will be on the left side of the
+video.</p>
+<p>By default, the <code>max-width</code> of the embedded element is 600px (the actual width
+could be smaller), out of which 200px will be in the margin, meaning that there
+will be at least 400px left for the narrative in the article body.</p>
+<p>When the screen width is smaller than 1200px, the embedded elements will be
+floated back into the article as normal block-level elements.</p>
+<h3 id="quotes">Quotes</h3>
+<p>Use the <code>quote-left</code> or <code>quote-right</code> class to make content float to the left or
+right.</p>
+<pre><code class="language-html">&lt;div class=&quot;quote-left&quot;&gt;
+
+A quote to be floated to the left.
+
+&lt;/div&gt;
+</code></pre>
+<p>The quotes do not have to be literally quotes. These environments can contain
+any content, although quotes may be the most common application.</p>
+<div class="quote-left">
+<blockquote>
+<p>Here is a quote that I&rsquo;ve never said.</p>
+</blockquote>
+</div>
+<p>The default width of the content is 45% of the container. You have seen an
+example of <code>quote-right</code> at the beginning of this article. Here is an example of
+<code>quote-left</code> on the left side. The quotes will stop floating and become normal
+block-level elements when the screen width is smaller than 800px.</p>
+<h2 id="list-pages">List pages</h2>
+<h3 id="open-face-characters">Open face characters</h3>
+<p>The first alphabetical character in each summary block is converted to an <a href="https://www.w3.org/TR/xml-entity-names/double-struck.html">open
+face character</a> such
+as:</p>
+<div style="font-size: 3em; line-height: 1em;">
+<blockquote>
+<p>𝔸 𝔹 ℂ 𝔻 𝔼 𝔽 𝔾 ℍ 𝕀 𝕁 𝕂 𝕃 𝕄 ℕ 𝕆 ℙ ℚ ℝ 𝕊 𝕋 𝕌 𝕍 𝕎 𝕏 𝕐 ℤ 𝕒 𝕓 𝕔 𝕕 𝕖 𝕗 𝕘 𝕙 𝕚 𝕛 𝕜 𝕝 𝕞 𝕟 𝕠 𝕡 𝕢 𝕣 𝕤 𝕥 𝕦 𝕧 𝕨 𝕩 𝕪 𝕫</p>
+</blockquote>
+</div>
+<h3 id="navigation-links">Navigation links</h3>
+<h2 id="responsive-design">Responsive design</h2>
+<h3 id="screen-size">Screen size</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Attribute \ width</th>
+<th>650 - 800px</th>
+<th>800 - 1280px</th>
+<th>&gt; 1280px</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Menu</td>
+<td>optional items</td>
+<td>hidden</td>
+<td>shown</td>
+<td>&lt;=</td>
+</tr>
+<tr>
+<td>Table of contents</td>
+<td>position</td>
+<td>=&gt;</td>
+<td>body / static</td>
+<td>left margin / sticky</td>
+</tr>
+<tr>
+<td>Floats</td>
+<td>position</td>
+<td>=&gt;</td>
+<td>body / static</td>
+<td>beside or overlapping body</td>
+</tr>
+<tr>
+<td>Sidenotes</td>
+<td>position</td>
+<td>=&gt;</td>
+<td>body / static</td>
+<td>side</td>
+</tr>
+<tr>
+<td>Home posts</td>
+<td>layout</td>
+<td>one column</td>
+<td>two columns</td>
+<td>&lt;=</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dark-theme">Dark theme</h3>
+<p>This theme uses the
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme"><code>prefer-color-scheme</code></a>
+CSS media feature to respond to the dark color theme of the system. If you
+change your system to the dark mode, the web pages will automatically switch to
+the dark mode.</p>
+<h2 id="custom-layouts">Custom layouts</h2>
+<h2 id="todo">TODO</h2>
+<p>section anchors</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>This example website does contain images and videos as demos, though. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>For example, <code>pre: &quot;optional&quot;</code> will generate the menu item
+<code>&lt;li class=&quot;optional&quot;&gt;</code>. It may be an unimportant item that you do not mind
+hiding on smaller screens. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>We recommend that you keep the title short so it can fit on one line. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Note that if you want to use citations, you have <a href="https://bookdown.org/yihui/blogdown/output-format.html">the R Markdown
+format</a> with the R
+package <strong>blogdown</strong>. Plain Markdown posts (<code>.md</code> files) do not support
+citations. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>Author's bio</h3></div>
+  <div>
+
+
+
+
+
+<div>Yihui Xie (<a href="https://yihui.org">https://yihui.org</a>) is a software engineer at <a href="https://www.rstudio.com">RStudio</a>. He earned his PhD from the Department of Statistics, Iowa State University. He has authored several R packages, such as <strong>knitr</strong>, <strong>bookdown</strong>, <strong>blogdown</strong>, <strong>xaringan</strong>, <strong>DT</strong>, and <strong>tinytex</strong>. He also co-authored a few other R packages, including <strong>shiny</strong>, <strong>rmarkdown</strong>, and <strong>leaflet</strong>. He has published a number of books, including <em>Dynamic Documents with R and knitr</em>, <em>bookdown: Authoring Books and Technical Documents with R Markdown</em>, <em>blogdown: Creating Websites with R Markdown</em>, <em>R Markdown: The Definitive Guide</em>, and <em>R Markdown Cookbook</em>. He is the founder of the Capital of Statistics (<a href="https://cosx.org">https://cosx.org</a>). He initiated the Chinese R conference in 2008.</div>
+
+
+</div>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>Acknowledgments</h3></div>
+  <div><p>We thank the authors of the <a href="https://wowchemy.com">Wowchemy</a> theme, <a href="https://github.com/edwardtufte/tufte.css">tufte.css</a>, and the
+<a href="https://distill.pub">Distill</a> framework for inspirations. Many users in the R community have asked
+for a Distill-like Hugo theme directly or indirectly, including but not limited to
+<a href="https://emitanaka.org/r/posts/2018-12-12-scientific-and-technical-blogging-radix-vs-blogdown/">Emi Tanaka</a>,
+<a href="https://twitter.com/nacnudus/status/1098910973266743296">Duncan Garmonsway</a>,
+<a href="https://stackoverflow.com/q/54388451/559676">Frank Harrell</a>,
+<a href="https://twitter.com/JosiahParry/status/1231280231543164928">Josiah Parry</a>, and
+<a href="https://twitter.com/apreshill/status/1070550028274429952">Alison Hill</a>. We are not sure if this Hugo
+Prose theme would make it easier or even harder to answer the frequently asked question &ldquo;blogdown or
+distill?&rdquo;</p>
+<p>The images on this page are from Wikipedia entries <a href="https://en.wikipedia.org/wiki/Stoicism">Stoicism</a>
+and <a href="https://zh.wikipedia.org/wiki/%E6%B8%85%E6%98%8E%E4%B8%8A%E6%B2%B3%E5%9C%96">清明上河图</a>. The
+CSS style for draft posts was borrowed from Fabian Tamp&rsquo;s
+<a href="https://github.com/capnfabs/paperesque/">paperesque</a> theme. <a href="https://palant.info/2020/06/04/the-easier-way-to-use-lunr-search-with-hugo/">Wladimir Palant&rsquo;s tutorial</a>
+helped a lot with our implementation of the client-side search.</p>
+ </div>
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>Reuse</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>Suggest changes</h3></div>
+  
+  
+  
+    
+    
+  
+  If you find any mistakes (including typos) or want to suggest changes,
+  please feel free to <a href="https://github.com/yihui/hugo-prose/edit/master/exampleSite/content/about.md" id="edit-link">edit
+  the source file of this page</a> on Github and create a pull request.
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>Citation</h3></div>
+  <p>For attribution, please cite this work as</p>
+  <pre><code class="no-highlight">Yihui Xie (2020). About Hugo Prose. Hugo Prose. /about/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code class="no-highlight">@misc{
+  title = "About Hugo Prose",
+  author = "Yihui Xie",
+  year = "2020",
+  journal = "Hugo Prose",
+  note = "/about/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+
+
+
+
+</div>
+
+
+  <footer>
+  <script async src="//yihui.org/js/center-img.js"></script>
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>
+hljs.configure({languages: []});
+hljs.initHighlightingOnLoad();
+</script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://en.wikipedia.org/wiki/Seneca_the_Younger">Lucius Annaeus Seneca</a> 4 BC &ndash; AD 65</li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script async src="/js/features.js" data-page-features="[[&#34;&#43;toc&#34;,&#34;&#43;number_sections&#34;,&#34;&#43;sidenotes&#34;,&#34;-citation&#34;],[&#34;&#43;sidenotes&#34;],null]"></script>
+  </body>
+</html>
+

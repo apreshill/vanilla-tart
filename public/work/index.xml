@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Works on Hugo Prose</title>
+    <link>/work/</link>
+    <description>Recent content in Works on Hugo Prose</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="/work/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seneca&#39;s essays</title>
+      <link>/work/essays/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/work/essays/</guid>
+      <description>Traditionally given in the following order:
+ De Providentia (On providence) - addressed to Lucilius De Constantia Sapientis (On the Firmness of the Wise Person) - addressed to Serenus De Ira (On anger) – A study on the consequences and the control of anger - addressed to his brother Novatus Ad Marciam, De consolatione (To Marcia, On Consolation) – Consoles her on the death of her son De Vita Beata (On the Happy Life) - addressed to Gallio  &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Seneca&#39;s tragedies</title>
+      <link>/work/tragedies/</link>
+      <pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/work/tragedies/</guid>
+      <description>Fabulae crepidatae (tragedies with Greek subjects):
+ Hercules or Hercules furens (The Madness of Hercules) Troades (The Trojan Women) Phoenissae (The Phoenician Women) Medea Phaedra Oedipus Agamemnon Thyestes Hercules Oetaeus (Hercules on Oeta): generally considered not written by Seneca. First rejected by Heinsius.  Fabula praetexta (tragedy in Roman setting):
+ Octavia: almost certainly not written by Seneca (at least in its final form) since it contains accurate prophecies of both his and Nero’s deaths.</description>
+    </item>
+    
+  </channel>
+</rss>

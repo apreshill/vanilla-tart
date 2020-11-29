@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publication on Hugo Prose</title>
+    <link>/categories/publication/</link>
+    <description>Recent content in Publication on Hugo Prose</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="/categories/publication/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seneca&#39;s tragedies</title>
+      <link>/work/tragedies/</link>
+      <pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/work/tragedies/</guid>
+      <description>Fabulae crepidatae (tragedies with Greek subjects):
+ Hercules or Hercules furens (The Madness of Hercules) Troades (The Trojan Women) Phoenissae (The Phoenician Women) Medea Phaedra Oedipus Agamemnon Thyestes Hercules Oetaeus (Hercules on Oeta): generally considered not written by Seneca. First rejected by Heinsius.  Fabula praetexta (tragedy in Roman setting):
+ Octavia: almost certainly not written by Seneca (at least in its final form) since it contains accurate prophecies of both his and Nero’s deaths.</description>
+    </item>
+    
+  </channel>
+</rss>

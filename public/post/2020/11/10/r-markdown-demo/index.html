@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> R Markdown Demo | Hugo Prose</title>
+    
+    
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="R Markdown Demo"/>
+<meta name="twitter:description" content="Floats Full-width figures Use a fenced Div with the class fullwidth, e.g.,
+::: {.fullwidth} Any Markdown content or code blocks here. ```{r, echo=FALSE, fig.dim=c(14, 4)} plot(sunspots) ``` :::  Figure 1: Monthly mean relative sunspot numbers from 1749 to 1983. Collected at Swiss Federal Observatory, Zurich until 1960, then Tokyo Astronomical Observatory.   If you add the class fullscroll to the Div, the figure will be scrollable, e."/>
+
+
+
+ 
+<link rel="stylesheet" href="/main.min.ca292f1e088032eecc5a6b2f318a78967e3a9bd30baf0c2c58a58f02efa24a70.css">
+
+  </head>
+
+  <body>
+
+    <nav class="menu">
+    <ul>
+      <li class="left">
+        <a href="/"><span>Hugo Prose</span></a>
+      </li>
+      
+      <li>
+        <a href="/">Home</a>
+      </li>
+      
+      <li>
+        <a href="/about/">About</a>
+      </li>
+      
+      <li>
+        <a href="/sitemap/">Sitemap</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/#">Search</a>
+      </li>
+      
+      <li>
+        <a href="/index.xml">Subscribe</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">R Markdown Demo</span></h1>
+
+<h3 class="author">
+Yihui Xie
+</h3>
+
+<h3 class="date">2020-11-10</h3>
+<p class="terms">
+  
+  
+  
+  
+  
+</p>
+</div>
+
+<div class="article">
+
+<script src="/post/2020/11/10/r-markdown-demo/index_files/header-attrs/header-attrs.js"></script>
+<link href="/post/2020/11/10/r-markdown-demo/index_files/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/post/2020/11/10/r-markdown-demo/index_files/anchor-sections/anchor-sections.js"></script>
+
+
+<div id="floats" class="section level2">
+<h2>Floats</h2>
+<div id="full-width-figures" class="section level3">
+<h3>Full-width figures</h3>
+<p>Use a fenced <code>Div</code> with the class <code>fullwidth</code>, e.g.,</p>
+<pre class="md"><code>::: {.fullwidth}
+Any Markdown content or code blocks here.
+
+```{r, echo=FALSE, fig.dim=c(14, 4)}
+plot(sunspots)
+```
+:::</code></pre>
+<div class="fullwidth">
+<div class="figure"><span id="fig:sunspots"></span>
+<img src="/post/2020/11/10/r-markdown-demo/index_files/figure-html/sunspots-1.svg" alt="Monthly mean relative sunspot numbers from 1749 to 1983. Collected at Swiss Federal Observatory, Zurich until 1960, then Tokyo Astronomical Observatory." width="1344" />
+<p class="caption">
+Figure 1: Monthly mean relative sunspot numbers from 1749 to 1983. Collected at Swiss Federal Observatory, Zurich until 1960, then Tokyo Astronomical Observatory.
+</p>
+</div>
+</div>
+<p>If you add the class <code>fullscroll</code> to the <code>Div</code>, the figure will be scrollable,
+e.g.,</p>
+<pre class="md"><code>::: {.fullwidth .fullscroll}
+
+:::</code></pre>
+<div class="fullwidth fullscroll">
+<div class="figure"><span id="fig:scroll"></span>
+<img src="/post/2020/11/10/r-markdown-demo/index_files/figure-html/scroll-1.svg" alt="This is a super wide figure that you need to scroll to view it fully." width="2880" />
+<p class="caption">
+Figure 2: This is a super wide figure that you need to scroll to view it fully.
+</p>
+</div>
+</div>
+</div>
+<div id="embedded-figures" class="section level3">
+<h3>Embedded figures</h3>
+<p>You can embed any elements (typically figures) that span into the page margin.
+Use a fenced <code>Div</code> with the class <code>embed-left</code> or <code>embed-right</code>, e.g.,</p>
+<div class="embed-right">
+<div class="figure"><span id="fig:embed-plot"></span>
+<img src="/post/2020/11/10/r-markdown-demo/index_files/figure-html/embed-plot-1.svg" alt="This is a figure embedded on the right." width="480" />
+<p class="caption">
+Figure 3: This is a figure embedded on the right.
+</p>
+</div>
+</div>
+<pre class="md"><code>::: {.embed-right}
+
+Here is a special figure.
+
+```{r}
+plot(cars)
+```
+:::</code></pre>
+<p>If you want to embed a table, that will be okay, too. Really, you can embed
+anything.</p>
+<pre class="md"><code>::: {.embed-left}
+```{r, echo=FALSE}
+knitr::kable(head(mtcars), caption = &#39;An example dataset.&#39;)
+```
+:::</code></pre>
+<div class="embed-left">
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 1: </span>An example dataset.</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">mpg</th>
+<th align="right">cyl</th>
+<th align="right">disp</th>
+<th align="right">hp</th>
+<th align="right">drat</th>
+<th align="right">wt</th>
+<th align="right">qsec</th>
+<th align="right">vs</th>
+<th align="right">am</th>
+<th align="right">gear</th>
+<th align="right">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mazda RX4</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.620</td>
+<td align="right">16.46</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">Mazda RX4 Wag</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.875</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Datsun 710</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">108</td>
+<td align="right">93</td>
+<td align="right">3.85</td>
+<td align="right">2.320</td>
+<td align="right">18.61</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Hornet 4 Drive</td>
+<td align="right">21.4</td>
+<td align="right">6</td>
+<td align="right">258</td>
+<td align="right">110</td>
+<td align="right">3.08</td>
+<td align="right">3.215</td>
+<td align="right">19.44</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Hornet Sportabout</td>
+<td align="right">18.7</td>
+<td align="right">8</td>
+<td align="right">360</td>
+<td align="right">175</td>
+<td align="right">3.15</td>
+<td align="right">3.440</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">Valiant</td>
+<td align="right">18.1</td>
+<td align="right">6</td>
+<td align="right">225</td>
+<td align="right">105</td>
+<td align="right">2.76</td>
+<td align="right">3.460</td>
+<td align="right">20.22</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Now I have generate some text to fill the space on the right:
+hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer hold my beer.</p>
+</div>
+</div>
+<div id="text-elements" class="section level2">
+<h2>Text elements</h2>
+<div id="table-of-contents" class="section level3">
+<h3>Table of contents</h3>
+<p>TOC should be automatically generated unless it is disabled via
+<code>features: [-toc]</code> in YAML. To define the TOC title, use the <code>toc-title</code> field
+in YAML.</p>
+</div>
+<div id="section-numbers" class="section level3">
+<h3>Section numbers</h3>
+<p>Sections should be automatically numbered unless Pandoc has already numbered
+them,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> or the feature is disabled via <code>features: [-number_sections]</code>.</p>
+</div>
+<div id="footnotes" class="section level3">
+<h3>Footnotes</h3>
+<p>Footnotes should be automatically moved to the right margin,<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> unless the
+feature is disabled via <code>features: [-sidenotes]</code>.</p>
+</div>
+<div id="sidenotes" class="section level3">
+<h3>Sidenotes</h3>
+<p>Sidenotes can be generated via a div with classes <code>side</code> and <code>side-left</code> or
+<code>side-right</code>. You can use either the HTML syntax <code>&lt;div class="side side-left"&gt;</code>
+or Pandoc’s fenced <code>Div</code>, e.g.,</p>
+<div class="side side-right">
+<p>This is a <strong>sidenote</strong> on the right side when the window is wider than 1280px.</p>
+</div>
+<pre class="md"><code>::: {.side .side-right}
+This is a **sidenote** on the right.
+:::</code></pre>
+</div>
+<div id="citations" class="section level3">
+<h3>Citations</h3>
+<p>Use <code>bibliography</code> or <code>references</code> in YAML to include the bibliography database,
+and use <code>@</code> to cite items, e.g., <code>@R-base</code> generates <span class="citation"><a href="#ref-R-base" role="doc-biblioref">R Core Team</a> (<a href="#ref-R-base" role="doc-biblioref">2020</a>)</span>.</p>
+<pre class="r"><code>knitr::write_bib(&#39;base&#39;, &#39;packages.bib&#39;)</code></pre>
+<p>As you can see above, we generated a <code>.bib</code> database with <code>knitr::write_bib()</code>.</p>
+<p>Citation entries are displayed in the right margin by default like footnotes. To
+disable this behavior, set <code>features: [-sidenotes]</code> in YAML.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-base" class="csl-entry">
+R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Apply the option <code>number_sections: true</code> to the output format
+<code>blogdown::html_page</code> in YAML.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>For example, this is a footnote.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>Author's bio</h3></div>
+  <div>
+
+
+
+
+
+<div>Yihui Xie (<a href="https://yihui.org">https://yihui.org</a>) is a software engineer at <a href="https://www.rstudio.com">RStudio</a>. He earned his PhD from the Department of Statistics, Iowa State University. He has authored several R packages, such as <strong>knitr</strong>, <strong>bookdown</strong>, <strong>blogdown</strong>, <strong>xaringan</strong>, <strong>DT</strong>, and <strong>tinytex</strong>. He also co-authored a few other R packages, including <strong>shiny</strong>, <strong>rmarkdown</strong>, and <strong>leaflet</strong>. He has published a number of books, including <em>Dynamic Documents with R and knitr</em>, <em>bookdown: Authoring Books and Technical Documents with R Markdown</em>, <em>blogdown: Creating Websites with R Markdown</em>, <em>R Markdown: The Definitive Guide</em>, and <em>R Markdown Cookbook</em>. He is the founder of the Capital of Statistics (<a href="https://cosx.org">https://cosx.org</a>). He initiated the Chinese R conference in 2008.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>Reuse</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>Suggest changes</h3></div>
+  
+  
+  
+    
+  
+  If you find any mistakes (including typos) or want to suggest changes,
+  please feel free to <a href="https://github.com/yihui/hugo-prose/edit/master/exampleSite/content/post/2020-11-10-r-markdown-demo/index.Rmd" id="edit-link">edit
+  the source file of this page</a> on Github and create a pull request.
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>Citation</h3></div>
+  <p>For attribution, please cite this work as</p>
+  <pre><code class="no-highlight">Yihui Xie (2020). R Markdown Demo. Hugo Prose. /post/2020/11/10/r-markdown-demo/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code class="no-highlight">@misc{
+  title = "R Markdown Demo",
+  author = "Yihui Xie",
+  year = "2020",
+  journal = "Hugo Prose",
+  note = "/post/2020/11/10/r-markdown-demo/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="/post/2019/07/30/letter-4-on-the-terrors-of-death/" title="Next post (older)">Letter 4: On The Terrors of Death</a></span>
+  &hercon;
+  <span class="nav-prev"></span>
+</nav>
+
+
+
+
+
+</div>
+
+
+  <footer>
+  <script async src="//yihui.org/js/center-img.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>
+hljs.configure({languages: []});
+hljs.initHighlightingOnLoad();
+</script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://en.wikipedia.org/wiki/Seneca_the_Younger">Lucius Annaeus Seneca</a> 4 BC &ndash; AD 65</li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script async src="/js/features.js" data-page-features="[[&#34;&#43;sticky_menu&#34;],[&#34;&#43;sidenotes&#34;],&#34;Outline&#34;]"></script>
+  </body>
+</html>
+
