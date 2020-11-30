@@ -68,7 +68,8 @@ h2 > .title,
   letter-spacing: .1em;
 }
 
-.article-list h2 {
+.article-list h2,
+.date {
   font-family: "Fraunces", serif;
   font-weight: 400;
 }
