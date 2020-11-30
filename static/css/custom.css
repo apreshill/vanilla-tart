@@ -29,11 +29,49 @@
 }
 
 .terms a:hover {
-	background: var(--body-bg);
+	background: transparent;
 }
 
 /* Make background of everything match variable */
 body, .side, .menu {
-	background: var(--body-bg);
+	background: transparent;
 }
 
+/* Tweaking upper navbar */
+.menu a:hover, .menu .active, .summary::first-letter, .footer a:hover {
+	background: transparent;
+	color: var(--body-color);
+	text-decoration: none;
+}
+
+/*----NAV LINK HOVER ANIMATION -----*/
+/* from Desiree: https://github.com/dcossyleon/blogdown_desiree/blob/master/assets/scss/custom.scss */
+
+/* stroke */
+
+.menu a,
+.menu a:after,
+.menu a:before {
+  transition: all .5s;
+}
+
+.menu a {
+  position: relative;
+}
+
+.menu a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.'; /* make invisible, dot beneath links */
+  color: transparent;
+  background: #14303C; /* need a variable here */
+  height: 2px;
+}
+
+.menu a:hover:after {
+  width: 80%;
+}
