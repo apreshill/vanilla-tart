@@ -11,7 +11,7 @@
 /* Unround and resize */
 .article-meta {
 	border-radius: 0px;
-	background-color: #E3F0EE; /* need a variable here */
+	background-color: var(--info); 
 	padding: 50px 5px;
 }
 
@@ -32,10 +32,12 @@
 	background: transparent;
 }
 
-/* Make background of everything match variable */
-body, .side, .menu {
+/* Make background for TOC and terms blend */
+#TOC,
+.terms {
 	background: transparent;
 }
+
 
 /* Tweaking upper navbar */
 .menu a:hover, .menu .active, .summary::first-letter, .footer a:hover {
@@ -68,7 +70,7 @@ body, .side, .menu {
   width: 0%;
   content: '.'; /* make invisible, dot beneath links */
   color: transparent;
-  background: #14303C; /* need a variable here */
+  background: var(--primary); 
   height: 2px;
 }
 
@@ -77,3 +79,11 @@ body, .side, .menu {
   width: 80%;
 }
 
+/* appendix */
+.post-card .side-title h1 a, .post-card .spacer-right, .appendix h3 {
+	color: var(--primary);
+}
+
+footer {
+	background: var(--secondary);
+}
