@@ -72,6 +72,8 @@ body, .side, .menu {
   height: 2px;
 }
 
-.menu a:hover:after {
+.menu a:hover:after,
+.menu a.active:after {
   width: 80%;
 }
+
