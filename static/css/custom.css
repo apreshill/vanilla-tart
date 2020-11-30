@@ -8,7 +8,32 @@
 	padding: 1em;
 }
 
-/* Unround */
+/* Unround and resize */
 .article-meta {
 	border-radius: 0px;
+	background-color: #E3F0EE; /* need a variable here */
+	padding: 50px 5px;
 }
+
+.title {
+	line-height: 1.5em;
+}
+
+/* Categories and terms to the left */
+.terms.side.side-left {
+  padding-top: 4rem;
+}
+
+.terms a {
+	border: 0px;
+}
+
+.terms a:hover {
+	background: var(--body-bg);
+}
+
+/* Make background of everything match variable */
+body, .side, .menu {
+	background: var(--body-bg);
+}
+
