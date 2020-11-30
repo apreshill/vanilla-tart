@@ -1,0 +1,10 @@
+/* Remove padding around article-meta by stripping from main container */ 
+.article-list, .single main, .single .appendix, .fullwidth, .embed-left, .embed-right {
+	padding: 0em !important; 
+	background: red;
+}
+
+/* Adding padding back */ 
+.article, .appendix {
+	padding: 1em;
+}
