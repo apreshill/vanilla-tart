@@ -8,6 +8,12 @@ $body-color: #2c2c2c;
 $link-color: #2c2c2c;
 $link-decoration: underline;
 $link-hover-color: transparentize($link-color, .3);
+$fa-font-path: "../webfonts";
 
 // Bootstrap and its default variables
 @import "bootstrap/scss/bootstrap";
+
+// Font awesome
+@import "fontawesome-free-5.15.1-web/scss/fontawesome.scss";
+@import "fontawesome-free-5.15.1-web/scss/solid.scss";
+@import "fontawesome-free-5.15.1-web/scss/regular.scss"
