@@ -1,5 +1,5 @@
 ---
-style: 'background: #f7f9fb;'
+style: 'background: #E3F0EE;'
 title: Projects
 weight: 2
 ---

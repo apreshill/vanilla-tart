@@ -1,5 +1,5 @@
 ---
-style: 'background: darkslategray; color: white;'
+style: 'background: #14303C; color: white;'
 title: Philosophy
 weight: 1
 ---
