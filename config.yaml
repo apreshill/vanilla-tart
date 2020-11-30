@@ -20,8 +20,10 @@ menu:
     - name: Search
       url: "#"
       identifier: menu-search
-    - name: Subscribe
+    - name: ""
       url: "index.xml"
+      pre: <i class="fas fa-rss"></i>
+      weight: 7
   footer:
     - name: Contact
       url: "/404.html"
@@ -46,7 +48,7 @@ params:
   mainSections: ["post", "work"]
   editLink: "https://github.com/yihui/hugo-prose/edit/master/exampleSite/content/"
   authorDelimiter: " / "
-  pageFeatures: [+sidenotes, +sticky_menu]
+  pageFeatures: [+sidenotes, +sticky_menu, +toc]
   description: >
     A website built through Hugo and blogdown with the hugo-prose theme.
   footer: >
@@ -64,3 +66,7 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  tableOfContents:
+    endLevel: 2
+    ordered: false
+    startLevel: 2
