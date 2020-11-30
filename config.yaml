@@ -46,7 +46,7 @@ params:
   mainSections: ["post", "work"]
   editLink: "https://github.com/yihui/hugo-prose/edit/master/exampleSite/content/"
   authorDelimiter: " / "
-  pageFeatures: [+sidenotes]
+  pageFeatures: [+sidenotes, +sticky_menu]
   description: >
     A website built through Hugo and blogdown with the hugo-prose theme.
   footer: >
