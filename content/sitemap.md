@@ -5,6 +5,7 @@ menu:
   header:
     weight: 3
 title: Sitemap
+features: [+sticky_menu]
 ---
 
 Below is a full list of posts and pages on this website ordered by date.
