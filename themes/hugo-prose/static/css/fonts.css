@@ -60,15 +60,15 @@
 }
 
 
-h1 > .title,
-.side-title > h1 {
+h2 > .title,
+.side-title > h2 {
   font-family: "Fraunces", serif;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: .1em;
 }
 
-.article-list h1 {
+.article-list h2 {
   font-family: "Fraunces", serif;
   font-weight: 400;
 }
