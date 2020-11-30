@@ -1,5 +1,10 @@
 // Your variable overrides
 $font-family-sans-serif: "Rosario";
+$body-bg: #f7f7f7;
+$body-color: #2c2c2c;
+$link-color: #2c2c2c;
+$link-decoration: underline;
+$link-hover-color: transparentize($link-color, .3);
 
 // Bootstrap and its default variables
 @import "bootstrap/scss/bootstrap";
