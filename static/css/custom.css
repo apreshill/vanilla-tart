@@ -93,7 +93,7 @@ footer {
 }
 
 /* format article headers */
-.article h2:not(#TOC) {
+.article h2:not(#TOC > h2) {
   border-bottom: .2rem solid var(--info);
   padding-bottom: 1rem;
   margin-bottom: 2rem;
