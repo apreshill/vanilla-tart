@@ -20,10 +20,11 @@ menu:
     - name: Search
       url: "#"
       identifier: menu-search
+      weight: 3
     - name: ""
       url: "index.xml"
       pre: <i class="fas fa-rss"></i>
-      weight: 7
+      weight: 4
   footer:
     - name: Contact
       url: "/404.html"
@@ -70,3 +71,5 @@ markup:
     endLevel: 2
     ordered: false
     startLevel: 2
+
+    
