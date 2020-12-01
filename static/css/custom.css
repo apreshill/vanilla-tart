@@ -38,6 +38,10 @@
 	background: transparent;
 }
 
+.side, .menu {
+	background: var(--body-bg);
+}
+
 
 /* Tweaking upper navbar */
 .menu a:hover, .menu .active, .summary::first-letter, .footer a:hover {
@@ -70,7 +74,7 @@
   width: 0%;
   content: '.'; /* make invisible, dot beneath links */
   color: transparent;
-  background: var(--primary); 
+  background: var(--secondary); 
   height: 2px;
 }
 
@@ -87,3 +91,11 @@
 footer {
 	background: var(--secondary);
 }
+
+/* format article headers */
+.article h2:not(#TOC) {
+  border-bottom: .2rem solid var(--info);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
