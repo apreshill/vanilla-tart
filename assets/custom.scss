@@ -21,7 +21,9 @@
 
 /* Categories and terms to the left */
 .terms.side.side-left {
-  padding-top: 4rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  position: relative;
 }
 
 .terms a {
@@ -31,6 +33,28 @@
 .terms a:hover {
 	background: transparent;
 }
+
+.terms::after, 
+.terms::before {
+	border: 1px solid transparentize(#5db3b3, .2);
+	bottom: 0;
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 5%;
+}
+
+.terms::before {
+	border-right: none;
+	left: 0;
+}
+
+.terms::after, .terms::after {
+	border-left: none;
+	right: 0;
+}
+
+
 
 /* Make background for TOC and terms blend */
 #TOC,
